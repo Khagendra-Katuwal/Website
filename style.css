@@ -1,0 +1,44 @@
+*{box-sizing:border-box}
+html{background:#f4f4f4}
+body{margin:0 auto;padding:0;color:#404040;background:#f4f4f4;font:76% Verdana,Tahoma,Arial,sans-serif;overflow-y:scroll}
+#wrap{width:760px;min-height:100vh;margin:0 auto 50px;color:#404040;background:#fff;box-shadow:0 0 18px rgba(0,0,0,.09)}
+a{color:#286ea0;background:inherit;font-weight:bold;text-decoration:none}
+a:hover,a:focus-visible{text-decoration:underline}
+a:focus-visible{outline:2px solid #286ea0;outline-offset:2px}
+p{margin:0 0 1.4em}
+.institution{display:flex;align-items:center;gap:14px;height:98px;padding:10px 38px 0;color:#66738f}
+.nmsu-mark{display:grid;place-items:center;width:48px;height:55px;color:#fff;background:#8c1d40;font-family:Georgia,"Times New Roman",serif;font-size:14px;font-weight:bold;line-height:1.05;letter-spacing:.07em;text-align:center}
+.institution-name{color:#737b89;font-size:19px;line-height:1.08}
+.institution-name small{display:block;margin-top:5px;color:#9ba2ad;font-size:12px;letter-spacing:.04em}
+#header{min-height:82px;margin:4px 40px 16px;padding:0}
+.identity{float:left}
+#header h1{margin:5px 0 0;padding:0;color:#a7b0c1;background:inherit;font-size:2.8em;line-height:1}
+#header h1 a{color:inherit;font-weight:inherit;text-decoration:none}
+#header h2{float:left;margin:-.05em 0 0;padding:0 0 0 15px;color:#66738f;font-size:1.35em}
+#address{padding:7px 0 0 57%;color:#a0a0a0;font-style:normal;font-weight:bold;line-height:1.3;text-align:right}
+#address a{color:#66738f}
+#frontphoto{display:block;width:760px;height:152px;margin:0 0 20px;border:0;object-fit:cover;object-position:center 49%;filter:saturate(.82) contrast(1.08) brightness(.75)}
+#leftside{clear:left;float:left;width:140px;margin:0 0 5px;padding:0}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+ul.avmenu{width:140px;margin:0 0 18px;padding:0;list-style:none}
+ul.avmenu li{display:inline;width:140px;padding:0;line-height:1.4}
+ul.avmenu li a{float:left;width:136px;margin-bottom:5px;padding:5px 1px 5px 5px;border-left:4px solid #ccc;color:#505050;background:#f0f0f0;font-weight:bold;text-decoration:none}
+ul.avmenu li a:hover,ul.avmenu li a.current,ul.avmenu li a:focus-visible{border-left-color:#286ea0;color:#505050;background:#e0e0e0}
+.announce{clear:left;width:136px;margin:10px 0 15px;padding:7px 5px;border-left:4px solid #ccc;color:#505050;background:#f4f4f4;font-size:.9em;line-height:1.5}
+.announce p{margin:7px 0 0}
+#content{min-height:310px;margin:0 150px 5px;padding:0 10px 20px;border-right:1px solid #f0f0f0;border-left:1px solid #f0f0f0;line-height:1.5}
+#content h2{margin:0 0 10px;color:#404040;font-size:1.6em;line-height:1.2;text-transform:lowercase}
+#content p{text-align:justify}
+.portrait{width:165px;height:218px;padding:1px;border:4px solid #eaeaf0;background:#ccc;object-fit:cover;object-position:50% 18%}
+.right{float:right;margin:2px 0 10px 18px}
+.dotted-list{margin:0;padding:4px 0 8px;list-style:none}
+.dotted-list li{position:relative;margin:0 0 9px;padding:3px 0 5px 16px;text-align:justify}
+.dotted-list li::before{position:absolute;top:6px;left:2px;color:#66738f;content:"▪";font-size:15px;line-height:1}
+.publication-list li{margin-bottom:15px}
+.year{color:#66738f;font-weight:bold}
+.closing-note{margin-top:4px}
+#footer{clear:both;width:760px;margin:0 auto;padding:15px 0;border-top:1px solid #e8e8e8;color:#c3c3c3;background:#fff;text-align:center}
+#footer p{margin:0 0 8px;padding:0}
+@media(max-width:780px){body{font-size:13px;overflow-y:auto}#wrap{width:min(100%,760px);margin-bottom:0;box-shadow:none}.institution{height:82px;padding:10px 22px 0}.institution-name{font-size:16px}#header{min-height:120px;margin:12px 22px 16px}.identity{float:none}#header h1{font-size:2.25em}#header h2{float:none;padding-left:0}#address{padding:18px 0 0;text-align:left}#frontphoto{width:100%;height:132px}#leftside{float:none;width:auto;margin:0 16px 20px}ul.avmenu{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;width:auto;margin-bottom:10px}ul.avmenu li{display:block;width:auto}ul.avmenu li a{float:none;display:block;width:auto;margin:0}.announce{display:none}#content{min-height:0;margin:0 16px 5px;padding:0 4px 24px;border:0}.portrait{width:145px;height:192px}#footer{width:100%;padding:15px 20px 20px}}
+@media(max-width:430px){.institution-name{font-size:14px}.nmsu-mark{width:43px;height:50px;font-size:12px}.right{float:none;display:block;margin:0 0 18px}}
+@media print{html,body{background:#fff;font-family:"Times New Roman",serif}#wrap{width:auto;margin:2%;box-shadow:none}.institution,#frontphoto,#leftside{display:none}#content{margin:0;border:0}#footer{width:100%}}
