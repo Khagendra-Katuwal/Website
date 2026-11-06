@@ -1,12 +1,17 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Student advising and mentorship by Khagendra Katuwal.">
-  <title>Student Supervising | Khagendra Katuwal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Student mentoring and research supervision by Khagendra Katuwal.">
+
+  <title>Student Mentoring | Khagendra Katuwal</title>
+
   <link rel="stylesheet" href="style.css">
+
   <style>
+    /* Main container */
     #wrap {
       border: 1px solid #d1d5db;
       border-top: 4px solid #880023;
@@ -16,6 +21,7 @@
       margin: 20px auto;
     }
 
+    /* Header */
     #header {
       border-bottom: 1px solid #e5e7eb;
       padding-bottom: 15px;
@@ -24,20 +30,21 @@
     #header .identity h1 a {
       color: #111827;
       text-decoration: none;
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       font-weight: 700;
     }
 
     #header .identity h2 {
       color: #374151;
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       font-weight: 600;
       margin-top: 4px;
     }
 
+    /* Address */
     #address {
       color: #1f2937;
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       font-weight: 500;
       line-height: 1.5;
     }
@@ -48,79 +55,166 @@
       text-decoration: underline;
     }
 
-    #content h2, #content h3, h2, h3 {
+    /* Headings */
+    #content h2,
+    #content h3 {
       text-transform: none !important;
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       font-weight: 700;
       color: #111827;
     }
 
+    /* Banner image - preserve full image */
     #frontphoto {
+      display: block;
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      object-fit: contain !important;
+      object-position: center;
+      box-sizing: border-box;
       border-top: 1px solid #e5e7eb;
       border-bottom: 1px solid #e5e7eb;
     }
 
-    .announce {
-      border: 1px solid #cbd5e1;
-      border-left: 4px solid #880023;
-      border-radius: 4px;
-      padding: 12px;
-      background-color: #f8fafc;
+    /* Mentoring introduction */
+    .mentoring-intro {
+      color: #374151;
+      line-height: 1.75;
+      margin-bottom: 25px;
+      font-size: 1.02em;
     }
 
+    /* Student entries */
     .student-list {
-      list-style-type: disc;
-      padding-left: 20px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: student;
     }
 
     .student-list li {
-      margin-bottom: 16px;
+      counter-increment: student;
+      position: relative;
+      padding: 0 0 22px 20px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #e5e7eb;
+      line-height: 1.7;
+    }
+
+    .student-list li::before {
+      content: counter(student) ".";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+      color: #880023;
     }
 
     .student-name {
+      display: block;
+      font-size: 1.08em;
       font-weight: 700;
       color: #111827;
+      margin-bottom: 5px;
     }
 
-    .student-affil {
-      color: #4b5563;
-      font-weight: 500;
-    }
-
-    .student-interests {
-      margin-top: 2px;
+    .student-detail {
+      margin-bottom: 4px;
       color: #374151;
-      font-size: 0.95em;
     }
 
+    .student-detail strong {
+      color: #1f2937;
+      font-weight: 600;
+    }
+
+    .research-project {
+      margin-top: 7px;
+      color: #1f2937;
+    }
+
+    .research-project strong {
+      font-weight: 600;
+    }
+
+    .project-title {
+      display: block;
+      color: #374151;
+      font-weight: 600;
+      font-style: italic;
+      margin: 3px 0;
+    }
+
+    .student-description {
+      margin-top: 8px;
+      color: #4b5563;
+      line-height: 1.75;
+      text-align: justify;
+    }
+
+    /* Footer */
     #footer {
       border-top: 1px solid #e5e7eb;
     }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      .student-list li {
+        padding-left: 18px;
+      }
+
+      .student-description {
+        text-align: left;
+      }
+
+      .mentoring-intro {
+        font-size: 0.98em;
+      }
+    }
   </style>
 </head>
+
 <body>
+
 <div id="wrap">
+
+  <!-- HEADER -->
   <header id="header">
+
     <div class="identity">
-      <h1><a href="index.html">Khagendra Katuwal</a></h1>
+      <h1>
+        <a href="index.html">Khagendra Katuwal</a>
+      </h1>
+
       <h2>Solar Physicist · PhD Candidate</h2>
     </div>
+
     <address id="address">
       Department of Astronomy<br>
       PO Box 30001, MSC 4500<br>
       Las Cruces, NM 88003, USA<br>
       <a href="mailto:kkatuwal@nmsu.edu">kkatuwal@nmsu.edu</a>
     </address>
+
   </header>
 
-  <img id="frontphoto" src="student.jpeg" alt="Students advicing">
-  
+  <!-- BANNER IMAGE -->
+  <img
+    id="frontphoto"
+    src="student.jpeg"
+    alt="Students advised by Khagendra Katuwal"
+  >
+
+  <!-- NAVIGATION -->
   <nav id="leftside" aria-label="Main navigation">
+
     <h2 class="visually-hidden">Menu</h2>
+
     <ul class="avmenu">
       <li><a href="index.html">Home</a></li>
       <li><a href="publications.html">Publications</a></li>
-      <li><a class="current" href="advising.html">Student Supervising</a></li>
+      <li><a class="current" href="advising.html">Student Mentoring</a></li>
       <li><a href="teaching.html">Teaching</a></li>
       <li><a href="education.html">Education</a></li>
       <li><a href="honors.html">Honors</a></li>
@@ -129,41 +223,260 @@
       <li><a href="outreach.html">Media</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
   </nav>
 
+  <!-- MAIN CONTENT -->
   <main id="content">
-    <h2>Student Advising</h2>
-    <ul class="student-list">
+
+    <h2>Student Mentoring</h2>
+
+    <p class="mentoring-intro">
+      I have had the opportunity to co-advise seven undergraduate and
+      graduate students from academic institutions in the United States,
+      Nepal, India, and Bangladesh. Their research projects focus on
+      solar physics, heliophysics, solar magnetic activity, and space
+      weather, using observational data and computational methods.
+    </p>
+
+    <ol class="student-list">
+
+      <!-- 1. CUTTER BECK -->
       <li>
-        <span class="student-name">Cutter Beck</span> <span class="student-affil"> Worcester Polytechnic Institute </span><br>
-        <span class="student-interests"><em>Project:</em> Improving Automated Coronal Hole Detection Using Semi-Automatic Methods</span>
+
+        <span class="student-name">Cutter Beck</span>
+
+        <div class="student-detail">
+          <strong>Institution:</strong>
+          Worcester Polytechnic Institute (WPI), USA
+        </div>
+
+        <div class="student-detail">
+          <strong>Education:</strong>
+          Bachelor's degree, graduated in 2025
+        </div>
+
+        <div class="research-project">
+          <strong>Research Project:</strong>
+          <span class="project-title">
+            Improving Automated Coronal Hole Detection Using
+            Semi-Automatic Methods
+          </span>
+        </div>
+
+        <p class="student-description">
+          Cutter's undergraduate research focused on improving the
+          identification of solar coronal holes using automated and
+          semi-automated detection methods. His project involved
+          computational approaches to analyzing solar observations,
+          contributing to the development and evaluation of coronal-hole
+          detection techniques.
+        </p>
+
       </li>
+
+      <!-- 2. BHAIRAV ALE -->
       <li>
-        <span class="student-name">Bhairav Ale</span> <span class="student-affil"> Central Department of Physics, Tribhuvan University <a href="mailto:alebhairab0@gmail.com">alebhairab0@gmail.com</a></span><br>
-        <span class="student-interests"><em>Research Interests:</em> Coronal Holes, Space Weather</span>
+
+        <span class="student-name">Bhairav Ale</span>
+
+        <div class="student-detail">
+          <strong>Institution:</strong>
+          Central Department of Physics, Tribhuvan University, Nepal
+        </div>
+
+        <div class="student-detail">
+          <strong>Education:</strong>
+          M.Sc. in Physics, graduated in 2025
+        </div>
+
+        <div class="research-project">
+          <strong>Research Project:</strong>
+          <span class="project-title">
+            Tracking the Evolution of Solar Coronal Holes
+          </span>
+        </div>
+
+        <p class="student-description">
+          Bhairav investigated the temporal evolution of solar coronal
+          holes using observations of the solar atmosphere. His project
+          focused on tracking changes in coronal-hole structure,
+          morphology, and spatial distribution over time. His research
+          interests include solar physics and space weather.
+        </p>
+
       </li>
+
+      <!-- 3. AKASH VINOD SHIRKE -->
       <li>
-        <span class="student-name">Akash Vinod Shirke</span> <span class="student-affil">UPES, Dehradun <a href="mailto:shirkea445@gmail.com">shirkea445@gmail.com</a></span><br>
-        <span class="student-interests"><em>Research Interests:</em> Solar Astrophysics, Space Weather, Computational Astrophysics</span>
+
+        <span class="student-name">Akash Vinod Shirke</span>
+
+        <div class="student-detail">
+          <strong>Institution:</strong>
+          UPES, Dehradun, India
+        </div>
+
+        <div class="student-detail">
+          <strong>Education:</strong>
+          Master's degree, graduated in 2025
+        </div>
+
+        <div class="research-project">
+          <strong>Research Projects:</strong>
+
+          <span class="project-title">
+            Distribution of Coronal Holes During Solar Cycle 24
+          </span>
+
+          <span class="project-title">
+            Behavior of Solar Jets in Active Regions, Quiet-Sun Regions,
+            and Coronal Holes
+          </span>
+        </div>
+
+        <p class="student-description">
+          Akash worked on two solar-physics research projects. The first
+          examined the spatial distribution of solar coronal holes
+          during Solar Cycle 24, while the second investigated solar-jet
+          behavior in different solar environments, including active
+          regions, quiet-Sun regions, and coronal holes. His research
+          interests include solar astrophysics, space weather, and
+          computational astrophysics.
+        </p>
+
       </li>
+
+      <!-- 4. ASHESH POKHAREL -->
       <li>
-        <span class="student-name">Ashesh Pokharel</span> <span class="student-affil"> Masters of Science in Physics  <a href="mailto:pokharelashesh17@gmail.com">pokharelashesh17@gmail.com</a> </span><br>
-        <span class="student-interests"><em>Research Interests:</em> Heliophysics</span>
+
+        <span class="student-name">Ashesh Pokharel</span>
+
+        <div class="student-detail">
+          <strong>Education:</strong>
+          M.Sc. in Physics, graduated in 2024
+        </div>
+
+        <div class="research-project">
+          <strong>Research Project:</strong>
+          <span class="project-title">
+            Tracking Solar Coronal Holes During Solar Cycle 24
+          </span>
+        </div>
+
+        <p class="student-description">
+          Ashesh studied the evolution of solar coronal holes throughout
+          Solar Cycle 24. His research focused on identifying and
+          tracking coronal holes over time to investigate changes in
+          their occurrence and spatial distribution. His interests
+          include heliophysics and solar atmospheric dynamics.
+        </p>
+
       </li>
+
+      <!-- 5. DHARANESH PALANIAPPAN -->
       <li>
-        <span class="student-name">Dharanesh Palaniappan</span> <span class="student-affil">Madras Christian College, <a href="mailto:dharaneshpalaniappan@gmail.com">dharaneshpalaniappan@gmail.com</a></span><br>
-        <span class="student-interests"><em>Research Interests:</em> Observational and Data-Driven Heliophysics</span>
+
+        <span class="student-name">Dharanesh Palaniappan</span>
+
+        <div class="student-detail">
+          <strong>Institution:</strong>
+          Madras Christian College, India
+        </div>
+
+        <div class="research-project">
+          <strong>Research Projects:</strong>
+
+          <span class="project-title">
+            Evolution of Solar Active Regions
+          </span>
+
+          <span class="project-title">
+            Merging of Solar Coronal Holes
+          </span>
+        </div>
+
+        <p class="student-description">
+          Dharanesh has worked on the evolution of solar active regions
+          and the merging of coronal holes. His projects use observational
+          data to investigate changes in solar magnetic structures and
+          coronal-hole morphology. His research interests include
+          observational and data-driven heliophysics.
+        </p>
+
       </li>
+
+      <!-- 6. SUJAN DAHAL -->
       <li>
-        <span class="student-name">Sujan Dahal</span> <span class="student-affil">MSc Physics <a href="mailto:sujan.dahal.5245@gmail.com">sujan.dahal.5245@gmail.com</a></span><br>
-        <span class="student-interests"><em>Research Interests:</em> Solar Physics</span>
+
+        <span class="student-name">Sujan Dahal</span>
+
+        <div class="student-detail">
+          <strong>Education:</strong>
+          M.Sc. in Physics — thesis in progress, Nepal
+        </div>
+
+        <div class="research-project">
+          <strong>Research Project:</strong>
+          <span class="project-title">
+            Relationship Between Coronal-Hole Properties and In Situ
+            Solar-Wind Parameters
+          </span>
+        </div>
+
+        <p class="student-description">
+          Sujan's research investigates relationships between the
+          observed properties of solar coronal holes and physical
+          parameters measured in situ in the solar wind. His project
+          aims to better understand the connection between coronal-hole
+          characteristics and solar-wind conditions in interplanetary
+          space.
+        </p>
+
       </li>
-    </ul>
+
+      <!-- 7. ASIF SHAHRIAR -->
+      <li>
+
+        <span class="student-name">Asif Shahriar</span>
+
+        <div class="student-detail">
+          <strong>Institution:</strong>
+          Jashore University of Science and Technology, Bangladesh
+        </div>
+
+        <div class="student-detail">
+          <strong>Education:</strong>
+          Undergraduate student — currently pursuing his degree
+        </div>
+
+        <div class="research-project">
+          <strong>Research Project:</strong>
+          <span class="project-title">
+            Splitting of Solar Coronal Holes
+          </span>
+        </div>
+
+        <p class="student-description">
+          Asif is conducting undergraduate research on the splitting
+          of solar coronal holes. His project examines how coronal-hole
+          structures evolve and separate into distinct regions using
+          solar observations, with an emphasis on their morphological
+          evolution and changes in coronal-hole boundaries.
+        </p>
+
+      </li>
+
+    </ol>
+
   </main>
 
+  <!-- FOOTER -->
   <footer id="footer">
     <p>© Khagendra Katuwal</p>
   </footer>
+
 </div>
+
 </body>
 </html>
